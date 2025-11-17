@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
   <title>A Floresta com RA</title>
 
   <!-- A-Frame -->
@@ -12,27 +13,45 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-  <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+  <a-scene
+    embedded
+    vr-mode-ui="enabled: false"
+    renderer="logarithmicDepthBuffer: true; antialias: true;"
+    arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;"
+  >
 
     <a-assets>
-      <a-asset-item id="elefante" src="./african_elephant_animated_3d_model.glb"></a-asset-item>
-      <a-asset-item id="girafa" src="./toy_giraffe.glb"></a-asset-item>
-      <a-asset-item id="leao" src="./lion_lowpoly.glb"></a-asset-item>
+      <!-- MODELOS 3D APONTANDO DIRETAMENTE PARA O GITHUB PAGES -->
+      <a-asset-item
+        id="elefante"
+        src="https://pedroant06.github.io/LivroInfantil-RealidadeAumentada/african_elephant_animated_3d_model.glb">
+      </a-asset-item>
+
+      <a-asset-item
+        id="girafa"
+        src="https://pedroant06.github.io/LivroInfantil-RealidadeAumentada/toy_giraffe.glb">
+      </a-asset-item>
+
+      <a-asset-item
+        id="leao"
+        src="https://pedroant06.github.io/LivroInfantil-RealidadeAumentada/lion_lowpoly.glb">
+      </a-asset-item>
     </a-assets>
 
     <!-- Elefante -->
-    <a-marker type="pattern" url="./pattern-elefante4.patt">
+    <a-marker type="pattern"
+              url="https://pedroant06.github.io/LivroInfantil-RealidadeAumentada/pattern-elefante4.patt">
       <a-entity
         gltf-model="#elefante"
         position="0 0 0"
         rotation="0 0 0"
         scale="30 30 30">
       </a-entity>
-    </a-marker>  
-
+    </a-marker>
 
     <!-- Girafa -->
-    <a-marker type="pattern" url="./pattern-girafa.patt">
+    <a-marker type="pattern"
+              url="https://pedroant06.github.io/LivroInfantil-RealidadeAumentada/pattern-girafa.patt">
       <a-entity
         gltf-model="#girafa"
         position="0 0 0"
@@ -42,14 +61,15 @@
     </a-marker>
 
     <!-- Leão -->
-    <a-marker type="pattern" url="./pattern-leao4.patt">  
+    <a-marker type="pattern"
+              url="https://pedroant06.github.io/LivroInfantil-RealidadeAumentada/pattern-leao4.patt">
       <a-entity
         gltf-model="#leao"
         position="0 0 0"
         rotation="0 0 0"
         scale="0.7 0.7 0.7">
       </a-entity>
-    </a-marker>  
+    </a-marker>
 
     <a-entity camera></a-entity>
   </a-scene>
