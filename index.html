@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>A Floresta com RA</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <!-- AR.js para A-Frame -->
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.min.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+
+    <a-assets>
+      <a-asset-item id="elefante" src="./african_elephant_animated_3d_model.glb"></a-asset-item>
+      <a-asset-item id="girafa" src="./toy_giraffe.glb"></a-asset-item>
+      <a-asset-item id="leao" src="./lion_lowpoly.glb"></a-asset-item>
+    </a-assets>
+
+    <!-- Elefante -->
+    <a-marker type="pattern" url="./pattern-elefante4.patt">
+      <a-entity
+        gltf-model="#elefante"
+        position="0 0 0"
+        rotation="0 0 0"
+        scale="30 30 30">
+      </a-entity>
+    </a-marker>  
+
+
+    <!-- Girafa -->
+    <a-marker type="pattern" url="./pattern-girafa.patt">
+      <a-entity
+        gltf-model="#girafa"
+        position="0 0 0"
+        rotation="0 100 0"
+        scale="1 1 1">
+      </a-entity>
+    </a-marker>
+
+    <!-- Leão -->
+    <a-marker type="pattern" url="./pattern-leao4.patt">  
+      <a-entity
+        gltf-model="#leao"
+        position="0 0 0"
+        rotation="0 0 0"
+        scale="0.7 0.7 0.7">
+      </a-entity>
+    </a-marker>  
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
